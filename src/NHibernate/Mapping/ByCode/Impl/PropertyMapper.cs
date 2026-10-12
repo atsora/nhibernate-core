@@ -10,7 +10,7 @@ using NHibernate.Util;
 namespace NHibernate.Mapping.ByCode.Impl
 {
 	// 6.0 TODO: remove IColumnsAndFormulasMapper once IPropertyMapper inherits it.
-	public class PropertyMapper : IPropertyMapper, IColumnsAndFormulasMapper
+	public class PropertyMapper : IPropertyMapper, IColumnsAndFormulasMapper, ISecondaryKeyMapper
 	{
 		private readonly IAccessorPropertyMapper entityPropertyMapper;
 		private readonly MemberInfo member;
@@ -316,5 +316,12 @@ namespace NHibernate.Mapping.ByCode.Impl
 		}
 
 		#endregion
+
+		#region Implementation of ISecondaryKeyMapper
+		public void SecondaryKey(bool isSecondaryKey)
+		{
+			propertyMapping.secondarykey = isSecondaryKey;
+		}
+		#endregion // Implementation of ISecondaryKeyMapper
 	}
 }

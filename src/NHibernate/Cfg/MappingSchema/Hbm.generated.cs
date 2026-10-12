@@ -979,11 +979,16 @@ namespace NHibernate.Cfg.MappingSchema {
         [System.Xml.Serialization.XmlAttributeAttribute("optimistic-lock")]
         [System.ComponentModel.DefaultValueAttribute(true)]
         public bool optimisticlock;
-        
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute("secondary-key")]
+        [System.ComponentModel.DefaultValueAttribute(false)]
+        public bool secondarykey;
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string formula;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         [System.ComponentModel.DefaultValueAttribute(false)]
@@ -1001,6 +1006,7 @@ namespace NHibernate.Cfg.MappingSchema {
         public HbmProperty() {
             this.unique = false;
             this.optimisticlock = true;
+            this.secondarykey = false;
             this.lazy = false;
             this.generated = HbmPropertyGeneration.Never;
         }

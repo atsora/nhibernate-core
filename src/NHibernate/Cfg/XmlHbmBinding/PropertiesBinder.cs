@@ -277,7 +277,7 @@ namespace NHibernate.Cfg.XmlHbmBinding
 		{
 			property.IsUpdateable = propertyMapping.updateSpecified ? propertyMapping.update:true;
 			property.IsInsertable = propertyMapping.insertSpecified ? propertyMapping.insert:true;
-			property.IsSecondaryKey = false; // false for the moment. TODO: To be implemented
+			property.IsSecondaryKey = propertyMapping.secondarykey;
 			PropertyGeneration generation;
 			switch (propertyMapping.generated)
 			{

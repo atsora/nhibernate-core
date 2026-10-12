@@ -1167,6 +1167,7 @@
 			</xs:attribute>
 			<xs:attribute name="optimistic-lock" default="true" type="xs:boolean">
 			</xs:attribute>
+			<xs:attribute name="secondary-key" default="false" type="xs:boolean" />
 			<xs:attribute name="formula" type="xs:string" />
 			<xs:attribute name="lazy" default="false" type="xs:boolean">
 			</xs:attribute>
